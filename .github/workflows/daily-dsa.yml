@@ -1,0 +1,150 @@
+name: Daily DSA Commit (Single File)
+
+on:
+  schedule:
+    - cron: "30 3 * * *"   # daily, adjust if you want
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Append one DSA entry to DAILY_DSA.md
+        run: |
+          set -e
+
+          FILE="DAILY_DSA.md"
+          if [ ! -f "$FILE" ]; then
+            echo "# Daily DSA Log" > "$FILE"
+            echo "" >> "$FILE"
+            echo "This file is updated automatically by GitHub Actions (1 entry/day)." >> "$FILE"
+            echo "" >> "$FILE"
+          fi
+
+          # ---- Problem list (edit this anytime) ----
+          # Format: "Title | Link | Topic"
+                   PROBLEMS=(
+            "Two Sum | https://leetcode.com/problems/two-sum/ | HashMap"
+            "Valid Parentheses | https://leetcode.com/problems/valid-parentheses/ | Stack"
+            "Merge Two Sorted Lists | https://leetcode.com/problems/merge-two-sorted-lists/ | Linked List"
+            "Best Time to Buy and Sell Stock | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ | Two Pointers"
+            "Contains Duplicate | https://leetcode.com/problems/contains-duplicate/ | HashSet"
+            "Binary Search | https://leetcode.com/problems/binary-search/ | Binary Search"
+            "Invert Binary Tree | https://leetcode.com/problems/invert-binary-tree/ | Tree DFS"
+            "Flood Fill | https://leetcode.com/problems/flood-fill/ | DFS/BFS"
+            "Maximum Subarray | https://leetcode.com/problems/maximum-subarray/ | Kadane"
+            "Move Zeroes | https://leetcode.com/problems/move-zeroes/ | Two Pointers"
+
+            "Product of Array Except Self | https://leetcode.com/problems/product-of-array-except-self/ | Prefix/Suffix"
+            "3Sum | https://leetcode.com/problems/3sum/ | Two Pointers"
+            "Container With Most Water | https://leetcode.com/problems/container-with-most-water/ | Two Pointers"
+            "Longest Substring Without Repeating Characters | https://leetcode.com/problems/longest-substring-without-repeating-characters/ | Sliding Window"
+            "Find All Anagrams in a String | https://leetcode.com/problems/find-all-anagrams-in-a-string/ | Sliding Window"
+            "Minimum Window Substring | https://leetcode.com/problems/minimum-window-substring/ | Sliding Window"
+            "Group Anagrams | https://leetcode.com/problems/group-anagrams/ | HashMap"
+            "Top K Frequent Elements | https://leetcode.com/problems/top-k-frequent-elements/ | Heap/Bucket"
+            "Kth Largest Element in an Array | https://leetcode.com/problems/kth-largest-element-in-an-array/ | Heap/Quickselect"
+            "Merge Intervals | https://leetcode.com/problems/merge-intervals/ | Intervals"
+
+            "Insert Interval | https://leetcode.com/problems/insert-interval/ | Intervals"
+            "Non-overlapping Intervals | https://leetcode.com/problems/non-overlapping-intervals/ | Greedy"
+            "Meeting Rooms | https://leetcode.com/problems/meeting-rooms/ | Intervals"
+            "Meeting Rooms II | https://leetcode.com/problems/meeting-rooms-ii/ | Heap"
+            "Rotate Image | https://leetcode.com/problems/rotate-image/ | Matrix"
+            "Spiral Matrix | https://leetcode.com/problems/spiral-matrix/ | Matrix"
+            "Set Matrix Zeroes | https://leetcode.com/problems/set-matrix-zeroes/ | Matrix"
+            "Search a 2D Matrix | https://leetcode.com/problems/search-a-2d-matrix/ | Binary Search"
+            "Number of Islands | https://leetcode.com/problems/number-of-islands/ | DFS/BFS"
+            "Max Area of Island | https://leetcode.com/problems/max-area-of-island/ | DFS/BFS"
+
+            "Clone Graph | https://leetcode.com/problems/clone-graph/ | Graph BFS/DFS"
+            "Course Schedule | https://leetcode.com/problems/course-schedule/ | Topo Sort"
+            "Course Schedule II | https://leetcode.com/problems/course-schedule-ii/ | Topo Sort"
+            "Pacific Atlantic Water Flow | https://leetcode.com/problems/pacific-atlantic-water-flow/ | DFS/BFS"
+            "Rotting Oranges | https://leetcode.com/problems/rotting-oranges/ | BFS"
+            "Word Ladder | https://leetcode.com/problems/word-ladder/ | BFS"
+            "Lowest Common Ancestor of a BST | https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/ | BST"
+            "Validate Binary Search Tree | https://leetcode.com/problems/validate-binary-search-tree/ | Tree DFS"
+            "Maximum Depth of Binary Tree | https://leetcode.com/problems/maximum-depth-of-binary-tree/ | Tree DFS"
+            "Diameter of Binary Tree | https://leetcode.com/problems/diameter-of-binary-tree/ | Tree DFS"
+
+            "Balanced Binary Tree | https://leetcode.com/problems/balanced-binary-tree/ | Tree DFS"
+            "Binary Tree Level Order Traversal | https://leetcode.com/problems/binary-tree-level-order-traversal/ | BFS"
+            "Binary Tree Right Side View | https://leetcode.com/problems/binary-tree-right-side-view/ | BFS"
+            "Same Tree | https://leetcode.com/problems/same-tree/ | Tree DFS"
+            "Subtree of Another Tree | https://leetcode.com/problems/subtree-of-another-tree/ | Tree DFS"
+            "Path Sum | https://leetcode.com/problems/path-sum/ | Tree DFS"
+            "Path Sum II | https://leetcode.com/problems/path-sum-ii/ | Backtracking"
+            "Binary Tree Maximum Path Sum | https://leetcode.com/problems/binary-tree-maximum-path-sum/ | Tree DP"
+            "Construct Binary Tree from Preorder and Inorder Traversal | https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ | Tree"
+            "Serialize and Deserialize Binary Tree | https://leetcode.com/problems/serialize-and-deserialize-binary-tree/ | Tree"
+
+            "Linked List Cycle | https://leetcode.com/problems/linked-list-cycle/ | Two Pointers"
+            "Reverse Linked List | https://leetcode.com/problems/reverse-linked-list/ | Linked List"
+            "Reorder List | https://leetcode.com/problems/reorder-list/ | Linked List"
+            "Remove Nth Node From End of List | https://leetcode.com/problems/remove-nth-node-from-end-of-list/ | Two Pointers"
+            "Add Two Numbers | https://leetcode.com/problems/add-two-numbers/ | Linked List"
+            "LRU Cache | https://leetcode.com/problems/lru-cache/ | HashMap + DLL"
+            "Min Stack | https://leetcode.com/problems/min-stack/ | Stack"
+            "Evaluate Reverse Polish Notation | https://leetcode.com/problems/evaluate-reverse-polish-notation/ | Stack"
+            "Daily Temperatures | https://leetcode.com/problems/daily-temperatures/ | Monotonic Stack"
+            "Car Fleet | https://leetcode.com/problems/car-fleet/ | Stack"
+
+            "Generate Parentheses | https://leetcode.com/problems/generate-parentheses/ | Backtracking"
+            "Combination Sum | https://leetcode.com/problems/combination-sum/ | Backtracking"
+            "Subsets | https://leetcode.com/problems/subsets/ | Backtracking"
+            "Permutations | https://leetcode.com/problems/permutations/ | Backtracking"
+            "Coin Change | https://leetcode.com/problems/coin-change/ | DP"
+            "Longest Increasing Subsequence | https://leetcode.com/problems/longest-increasing-subsequence/ | DP"
+            "House Robber | https://leetcode.com/problems/house-robber/ | DP"
+            "House Robber II | https://leetcode.com/problems/house-robber-ii/ | DP"
+            "Decode Ways | https://leetcode.com/problems/decode-ways/ | DP"
+            "Unique Paths | https://leetcode.com/problems/unique-paths/ | DP"
+          )
+
+          # -----------------------------------------
+
+          # Count how many entries already appended (lines starting with "## Day ")
+          DONE_COUNT="$(grep -c '^## Day ' "$FILE" || true)"
+
+          INDEX="$DONE_COUNT"
+          TOTAL="${#PROBLEMS[@]}"
+
+          if [ "$INDEX" -ge "$TOTAL" ]; then
+            echo "All problems in the list are completed. Exiting without commit."
+            exit 0
+          fi
+
+          ENTRY="${PROBLEMS[$INDEX]}"
+
+          TITLE="$(echo "$ENTRY" | awk -F' \\| ' '{print $1}')"
+          LINK="$(echo "$ENTRY" | awk -F' \\| ' '{print $2}')"
+          TOPIC="$(echo "$ENTRY" | awk -F' \\| ' '{print $3}')"
+
+          DAY_NUM=$((INDEX + 1))
+          TODAY="$(date -u +%Y-%m-%d)"
+
+          {
+            echo ""
+            echo "## Day $DAY_NUM ($TODAY)"
+            echo "- Problem: $TITLE"
+            echo "- Topic: $TOPIC"
+            echo "- Link: $LINK"
+          } >> "$FILE"
+
+          git add "$FILE"
+          git commit -m "DSA Day $DAY_NUM: $TITLE"
+          git push
