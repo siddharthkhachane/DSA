@@ -11,3 +11,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Valid Parentheses
 - Topic: Stack
 - Link: https://leetcode.com/problems/valid-parentheses/
+
+## Day 3 (2026-01-22)
+- Problem: Merge Two Sorted Lists
+- Topic: Linked List
+- Link: https://leetcode.com/problems/merge-two-sorted-lists/
