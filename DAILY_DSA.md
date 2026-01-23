@@ -16,3 +16,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Merge Two Sorted Lists
 - Topic: Linked List
 - Link: https://leetcode.com/problems/merge-two-sorted-lists/
+
+## Day 4 (2026-01-23)
+- Problem: Best Time to Buy and Sell Stock
+- Topic: Two Pointers
+- Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
