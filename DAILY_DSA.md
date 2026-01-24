@@ -21,3 +21,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Best Time to Buy and Sell Stock
 - Topic: Two Pointers
 - Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+## Day 5 (2026-01-24)
+- Problem: Contains Duplicate
+- Topic: HashSet
+- Link: https://leetcode.com/problems/contains-duplicate/
