@@ -26,3 +26,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Contains Duplicate
 - Topic: HashSet
 - Link: https://leetcode.com/problems/contains-duplicate/
+
+## Day 6 (2026-01-25)
+- Problem: Binary Search
+- Topic: Binary Search
+- Link: https://leetcode.com/problems/binary-search/
