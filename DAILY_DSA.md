@@ -31,3 +31,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: #Binary Search
 - Topic: Binary Search
 - Link: https://leetcode.com/problems/binary-search/
+
+## Day 7 (2026-01-26)
+- Problem: Invert Binary Tree
+- Topic: Tree DFS
+- Link: https://leetcode.com/problems/invert-binary-tree/
