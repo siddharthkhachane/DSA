@@ -36,3 +36,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Invert Binary Tree
 - Topic: Tree DFS
 - Link: https://leetcode.com/problems/invert-binary-tree/
+
+## Day 8 (2026-01-27)
+- Problem: Flood Fill
+- Topic: DFS/BFS
+- Link: https://leetcode.com/problems/flood-fill/
