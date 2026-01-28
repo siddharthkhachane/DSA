@@ -41,3 +41,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Flood Fill
 - Topic: DFS/BFS
 - Link: https://leetcode.com/problems/flood-fill/
+
+## Day 9 (2026-01-28)
+- Problem: Maximum Subarray
+- Topic: Kadane
+- Link: https://leetcode.com/problems/maximum-subarray/
