@@ -46,3 +46,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Maximum Subarray
 - Topic: Kadane
 - Link: https://leetcode.com/problems/maximum-subarray/
+
+## Day 10 (2026-01-29)
+- Problem: Move Zeroes
+- Topic: Two Pointers
+- Link: https://leetcode.com/problems/move-zeroes/
