@@ -51,3 +51,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Move Zeroes
 - Topic: Two Pointers
 - Link: https://leetcode.com/problems/move-zeroes/
+
+## Day 11 (2026-01-30)
+- Problem: Product of Array Except Self
+- Topic: Prefix/Suffix
+- Link: https://leetcode.com/problems/product-of-array-except-self/
