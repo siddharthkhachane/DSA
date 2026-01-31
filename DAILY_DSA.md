@@ -56,3 +56,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Product of Array Except Self
 - Topic: Prefix/Suffix
 - Link: https://leetcode.com/problems/product-of-array-except-self/
+
+## Day 12 (2026-01-31)
+- Problem: 3Sum
+- Topic: Two Pointers
+- Link: https://leetcode.com/problems/3sum/
