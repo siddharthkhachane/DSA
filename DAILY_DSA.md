@@ -61,3 +61,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: 3Sum
 - Topic: Two Pointers
 - Link: https://leetcode.com/problems/3sum/
+
+## Day 13 (2026-02-01)
+- Problem: Container With Most Water
+- Topic: Two Pointers
+- Link: https://leetcode.com/problems/container-with-most-water/
