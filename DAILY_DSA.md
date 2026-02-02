@@ -66,3 +66,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Container With Most Water
 - Topic: Two Pointers
 - Link: https://leetcode.com/problems/container-with-most-water/
+
+## Day 14 (2026-02-02)
+- Problem: Longest Substring Without Repeating Characters
+- Topic: Sliding Window
+- Link: https://leetcode.com/problems/longest-substring-without-repeating-characters/
