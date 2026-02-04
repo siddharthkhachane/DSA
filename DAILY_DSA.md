@@ -76,3 +76,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Find All Anagrams in a String
 - Topic: Sliding Window
 - Link: https://leetcode.com/problems/find-all-anagrams-in-a-string/
+
+## Day 16 (2026-02-04)
+- Problem: Minimum Window Substring
+- Topic: Sliding Window
+- Link: https://leetcode.com/problems/minimum-window-substring/
