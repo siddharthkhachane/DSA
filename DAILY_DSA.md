@@ -81,3 +81,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Minimum Window Substring
 - Topic: Sliding Window
 - Link: https://leetcode.com/problems/minimum-window-substring/
+
+## Day 17 (2026-02-05)
+- Problem: Group Anagrams
+- Topic: HashMap
+- Link: https://leetcode.com/problems/group-anagrams/
