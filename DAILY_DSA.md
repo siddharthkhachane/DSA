@@ -86,3 +86,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Group Anagrams
 - Topic: HashMap
 - Link: https://leetcode.com/problems/group-anagrams/
+
+## Day 18 (2026-02-06)
+- Problem: Top K Frequent Elements
+- Topic: Heap/Bucket
+- Link: https://leetcode.com/problems/top-k-frequent-elements/
