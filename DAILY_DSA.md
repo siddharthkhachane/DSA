@@ -91,3 +91,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Top K Frequent Elements
 - Topic: Heap/Bucket
 - Link: https://leetcode.com/problems/top-k-frequent-elements/
+
+## Day 19 (2026-02-07)
+- Problem: Kth Largest Element in an Array
+- Topic: Heap/Quickselect
+- Link: https://leetcode.com/problems/kth-largest-element-in-an-array/
