@@ -96,3 +96,8 @@ This file is updated automatically by GitHub Actions (1 entry/day).
 - Problem: Kth Largest Element in an Array
 - Topic: Heap/Quickselect
 - Link: https://leetcode.com/problems/kth-largest-element-in-an-array/
+
+## Day 20 (2026-02-08)
+- Problem: Merge Intervals
+- Topic: Intervals
+- Link: https://leetcode.com/problems/merge-intervals/
